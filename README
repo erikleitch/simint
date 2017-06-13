@@ -1,0 +1,21 @@
+make  creates the directory bin, with executable simint, which can be
+      run either in interactive mode, by typing "simint" with no
+      arguments, or "simint scriptname" to run in non-interactive
+      mode, where scriptname is the name of a valid TCL command
+      script, an example of which is in example.tcl
+
+If your pgplot libraries of header files are installed in a directory
+other than /usr/local/pgplot, you'll have to hand-edit Makefile to
+change the cariables:
+
+       PGINCDIR -- The directory where pgplot header files are located
+
+and/or
+
+       PGLIBDIR -- The directory where pgplot libraries are located
+
+to reflect your setup.
+
+
+
+

@@ -1,0 +1,377 @@
+#-----------------------------------------------------------------------
+# This file is designed to be included within another makefile in a
+# different directory. For this reason source and include files are
+# refered to by absolute path names, whereas object files are built
+# within the directory in which the parent makefile is being run.
+#
+# The parent makefile is expected to define the following macros:
+#
+#  SHARE     - The full name of the CBI/code/share/include directory.
+#  CC        - The C compiler to be used.
+#  CFLAGS    - Flags for the C compiler.
+#-----------------------------------------------------------------------
+
+#-----------------------------------------------------------------------
+# List all the object files creatable from this makefile.
+#-----------------------------------------------------------------------
+
+ALL_OBJ = addet.o afin.o airmas.o altaz.o amp.o ampqk.o aop.o aoppa.o \
+ aoppat.o aopqk.o atmdsp.o av2m.o bear.o caf2r.o caldj.o calyd.o cc2s.o \
+ cc62s.o cd2tf.o cldj.o clyd.o cr2af.o cr2tf.o cs2c.o cs2c6.o ctf2d.o \
+ ctf2r.o daf2r.o dafin.o dat.o dav2m.o dbear.o dbjin.o dc62s.o dcc2s.o \
+ dcmpf.o dcs2c.o dd2tf.o de2h.o deuler.o dfltin.o dh2e.o dimxv.o djcal.o \
+ djcl.o dm2av.o dmat.o dmoon.o dmxm.o dmxv.o dpav.o dr2af.o dr2tf.o \
+ drange.o dranrm.o ds2c6.o ds2tp.o dsep.o dt.o dtf2d.o dtf2r.o dtp2s.o \
+ dtp2v.o dtps2c.o dtpv2c.o dtt.o dv2tp.o dvdv.o dvn.o dvxv.o e2h.o earth.o \
+ ecleq.o ecmat.o ecor.o eg50.o epb.o epb2d.o epco.o epj.o epj2d.o eqecl.o \
+ eqeqx.o eqgal.o etrms.o euler.o evp.o fitxy.o fk425.o fk45z.o fk524.o \
+ fk54z.o flotin.o galeq.o galsup.o ge50.o geoc.o gmst.o gmsta.o h2e.o imxv.o \
+ intin.o invf.o kbj.o m2av.o map.o mappa.o mapqk.o mapqkz.o moon.o mxm.o \
+ mxv.o nut.o nutc.o oap.o oapqk.o obs.o pa.o pav.o pcd.o pda2h.o pdq2h.o \
+ planet.o pm.o polmo.o prebn.o prec.o preces.o precl.o prenut.o pvobs.o \
+ pxy.o range.o ranorm.o rcc.o rdplan.o refco.o refro.o refv.o refz.o \
+ rverot.o rvgalc.o rvlg.o rvlsrd.o rvlsrk.o s2tp.o sep.o smat.o subet.o \
+ supgal.o svd.o svdcov.o svdsol.o tp2s.o tp2v.o tps2c.o tpv2c.o unpcd.o \
+ v2tp.o vdv.o vn.o vxv.o xy2xy.o zd.o
+
+#-----------------------------------------------------------------------
+# All slalib code depends on slalib.h and slamac.h.
+#-----------------------------------------------------------------------
+
+$(ALL_OBJ): $(SLALIB)/slalib.h $(SLALIB)/slamac.h
+
+#-----------------------------------------------------------------------
+# Since slalib .c files are in a different directory from the calling
+# makefile, and make doesn't provide a portable way to specify this
+# in a suffix rule, we have to explicitly write out the rules for
+# compiling every file.
+#-----------------------------------------------------------------------
+
+addet.o: $(SLALIB)/addet.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/addet.c
+afin.o: $(SLALIB)/afin.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/afin.c
+airmas.o: $(SLALIB)/airmas.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/airmas.c
+altaz.o: $(SLALIB)/altaz.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/altaz.c
+amp.o: $(SLALIB)/amp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/amp.c
+ampqk.o: $(SLALIB)/ampqk.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ampqk.c
+aop.o: $(SLALIB)/aop.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/aop.c
+aoppa.o: $(SLALIB)/aoppa.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/aoppa.c
+aoppat.o: $(SLALIB)/aoppat.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/aoppat.c
+aopqk.o: $(SLALIB)/aopqk.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/aopqk.c
+atmdsp.o: $(SLALIB)/atmdsp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/atmdsp.c
+av2m.o: $(SLALIB)/av2m.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/av2m.c
+bear.o: $(SLALIB)/bear.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/bear.c
+caf2r.o: $(SLALIB)/caf2r.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/caf2r.c
+caldj.o: $(SLALIB)/caldj.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/caldj.c
+calyd.o: $(SLALIB)/calyd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/calyd.c
+cc2s.o: $(SLALIB)/cc2s.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cc2s.c
+cc62s.o: $(SLALIB)/cc62s.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cc62s.c
+cd2tf.o: $(SLALIB)/cd2tf.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cd2tf.c
+cldj.o: $(SLALIB)/cldj.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cldj.c
+clyd.o: $(SLALIB)/clyd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/clyd.c
+cr2af.o: $(SLALIB)/cr2af.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cr2af.c
+cr2tf.o: $(SLALIB)/cr2tf.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cr2tf.c
+cs2c.o: $(SLALIB)/cs2c.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cs2c.c
+cs2c6.o: $(SLALIB)/cs2c6.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/cs2c6.c
+ctf2d.o: $(SLALIB)/ctf2d.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ctf2d.c
+ctf2r.o: $(SLALIB)/ctf2r.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ctf2r.c
+daf2r.o: $(SLALIB)/daf2r.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/daf2r.c
+dafin.o: $(SLALIB)/dafin.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dafin.c
+dat.o: $(SLALIB)/dat.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dat.c
+dav2m.o: $(SLALIB)/dav2m.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dav2m.c
+dbear.o: $(SLALIB)/dbear.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dbear.c
+dbjin.o: $(SLALIB)/dbjin.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dbjin.c
+dc62s.o: $(SLALIB)/dc62s.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dc62s.c
+dcc2s.o: $(SLALIB)/dcc2s.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dcc2s.c
+dcmpf.o: $(SLALIB)/dcmpf.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dcmpf.c
+dcs2c.o: $(SLALIB)/dcs2c.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dcs2c.c
+dd2tf.o: $(SLALIB)/dd2tf.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dd2tf.c
+de2h.o: $(SLALIB)/de2h.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/de2h.c
+deuler.o: $(SLALIB)/deuler.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/deuler.c
+dfltin.o: $(SLALIB)/dfltin.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dfltin.c
+dh2e.o: $(SLALIB)/dh2e.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dh2e.c
+dimxv.o: $(SLALIB)/dimxv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dimxv.c
+djcal.o: $(SLALIB)/djcal.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/djcal.c
+djcl.o: $(SLALIB)/djcl.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/djcl.c
+dm2av.o: $(SLALIB)/dm2av.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dm2av.c
+dmat.o: $(SLALIB)/dmat.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dmat.c
+dmoon.o: $(SLALIB)/dmoon.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dmoon.c
+dmxm.o: $(SLALIB)/dmxm.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dmxm.c
+dmxv.o: $(SLALIB)/dmxv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dmxv.c
+dpav.o: $(SLALIB)/dpav.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dpav.c
+dr2af.o: $(SLALIB)/dr2af.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dr2af.c
+dr2tf.o: $(SLALIB)/dr2tf.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dr2tf.c
+drange.o: $(SLALIB)/drange.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/drange.c
+dranrm.o: $(SLALIB)/dranrm.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dranrm.c
+ds2c6.o: $(SLALIB)/ds2c6.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ds2c6.c
+ds2tp.o: $(SLALIB)/ds2tp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ds2tp.c
+dsep.o: $(SLALIB)/dsep.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dsep.c
+dt.o: $(SLALIB)/dt.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dt.c
+dtf2d.o: $(SLALIB)/dtf2d.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtf2d.c
+dtf2r.o: $(SLALIB)/dtf2r.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtf2r.c
+dtp2s.o: $(SLALIB)/dtp2s.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtp2s.c
+dtp2v.o: $(SLALIB)/dtp2v.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtp2v.c
+dtps2c.o: $(SLALIB)/dtps2c.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtps2c.c
+dtpv2c.o: $(SLALIB)/dtpv2c.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtpv2c.c
+dtt.o: $(SLALIB)/dtt.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dtt.c
+dv2tp.o: $(SLALIB)/dv2tp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dv2tp.c
+dvdv.o: $(SLALIB)/dvdv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dvdv.c
+dvn.o: $(SLALIB)/dvn.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dvn.c
+dvxv.o: $(SLALIB)/dvxv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/dvxv.c
+e2h.o: $(SLALIB)/e2h.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/e2h.c
+earth.o: $(SLALIB)/earth.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/earth.c
+ecleq.o: $(SLALIB)/ecleq.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ecleq.c
+ecmat.o: $(SLALIB)/ecmat.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ecmat.c
+ecor.o: $(SLALIB)/ecor.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ecor.c
+eg50.o: $(SLALIB)/eg50.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/eg50.c
+epb.o: $(SLALIB)/epb.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/epb.c
+epb2d.o: $(SLALIB)/epb2d.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/epb2d.c
+epco.o: $(SLALIB)/epco.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/epco.c
+epj.o: $(SLALIB)/epj.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/epj.c
+epj2d.o: $(SLALIB)/epj2d.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/epj2d.c
+eqecl.o: $(SLALIB)/eqecl.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/eqecl.c
+eqeqx.o: $(SLALIB)/eqeqx.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/eqeqx.c
+eqgal.o: $(SLALIB)/eqgal.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/eqgal.c
+etrms.o: $(SLALIB)/etrms.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/etrms.c
+euler.o: $(SLALIB)/euler.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/euler.c
+evp.o: $(SLALIB)/evp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/evp.c
+fitxy.o: $(SLALIB)/fitxy.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/fitxy.c
+fk425.o: $(SLALIB)/fk425.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/fk425.c
+fk45z.o: $(SLALIB)/fk45z.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/fk45z.c
+fk524.o: $(SLALIB)/fk524.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/fk524.c
+fk54z.o: $(SLALIB)/fk54z.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/fk54z.c
+flotin.o: $(SLALIB)/flotin.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/flotin.c
+galeq.o: $(SLALIB)/galeq.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/galeq.c
+galsup.o: $(SLALIB)/galsup.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/galsup.c
+ge50.o: $(SLALIB)/ge50.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ge50.c
+geoc.o: $(SLALIB)/geoc.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/geoc.c
+gmst.o: $(SLALIB)/gmst.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/gmst.c
+gmsta.o: $(SLALIB)/gmsta.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/gmsta.c
+h2e.o: $(SLALIB)/h2e.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/h2e.c
+imxv.o: $(SLALIB)/imxv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/imxv.c
+intin.o: $(SLALIB)/intin.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/intin.c
+invf.o: $(SLALIB)/invf.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/invf.c
+kbj.o: $(SLALIB)/kbj.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/kbj.c
+m2av.o: $(SLALIB)/m2av.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/m2av.c
+map.o: $(SLALIB)/map.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/map.c
+mappa.o: $(SLALIB)/mappa.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/mappa.c
+mapqk.o: $(SLALIB)/mapqk.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/mapqk.c
+mapqkz.o: $(SLALIB)/mapqkz.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/mapqkz.c
+moon.o: $(SLALIB)/moon.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/moon.c
+mxm.o: $(SLALIB)/mxm.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/mxm.c
+mxv.o: $(SLALIB)/mxv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/mxv.c
+nut.o: $(SLALIB)/nut.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/nut.c
+nutc.o: $(SLALIB)/nutc.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/nutc.c
+oap.o: $(SLALIB)/oap.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/oap.c
+oapqk.o: $(SLALIB)/oapqk.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/oapqk.c
+obs.o: $(SLALIB)/obs.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/obs.c
+pa.o: $(SLALIB)/pa.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pa.c
+pav.o: $(SLALIB)/pav.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pav.c
+pcd.o: $(SLALIB)/pcd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pcd.c
+pda2h.o: $(SLALIB)/pda2h.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pda2h.c
+pdq2h.o: $(SLALIB)/pdq2h.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pdq2h.c
+planet.o: $(SLALIB)/planet.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/planet.c
+pm.o: $(SLALIB)/pm.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pm.c
+polmo.o: $(SLALIB)/polmo.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/polmo.c
+prebn.o: $(SLALIB)/prebn.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/prebn.c
+prec.o: $(SLALIB)/prec.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/prec.c
+preces.o: $(SLALIB)/preces.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/preces.c
+precl.o: $(SLALIB)/precl.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/precl.c
+prenut.o: $(SLALIB)/prenut.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/prenut.c
+pvobs.o: $(SLALIB)/pvobs.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pvobs.c
+pxy.o: $(SLALIB)/pxy.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/pxy.c
+range.o: $(SLALIB)/range.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/range.c
+ranorm.o: $(SLALIB)/ranorm.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/ranorm.c
+rcc.o: $(SLALIB)/rcc.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rcc.c
+rdplan.o: $(SLALIB)/rdplan.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rdplan.c
+refco.o: $(SLALIB)/refco.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/refco.c
+refro.o: $(SLALIB)/refro.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/refro.c
+refv.o: $(SLALIB)/refv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/refv.c
+refz.o: $(SLALIB)/refz.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/refz.c
+rverot.o: $(SLALIB)/rverot.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rverot.c
+rvgalc.o: $(SLALIB)/rvgalc.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rvgalc.c
+rvlg.o: $(SLALIB)/rvlg.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rvlg.c
+rvlsrd.o: $(SLALIB)/rvlsrd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rvlsrd.c
+rvlsrk.o: $(SLALIB)/rvlsrk.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/rvlsrk.c
+s2tp.o: $(SLALIB)/s2tp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/s2tp.c
+sep.o: $(SLALIB)/sep.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/sep.c
+smat.o: $(SLALIB)/smat.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/smat.c
+subet.o: $(SLALIB)/subet.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/subet.c
+supgal.o: $(SLALIB)/supgal.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/supgal.c
+svd.o: $(SLALIB)/svd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/svd.c
+svdcov.o: $(SLALIB)/svdcov.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/svdcov.c
+svdsol.o: $(SLALIB)/svdsol.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/svdsol.c
+tp2s.o: $(SLALIB)/tp2s.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/tp2s.c
+tp2v.o: $(SLALIB)/tp2v.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/tp2v.c
+tps2c.o: $(SLALIB)/tps2c.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/tps2c.c
+tpv2c.o: $(SLALIB)/tpv2c.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/tpv2c.c
+unpcd.o: $(SLALIB)/unpcd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/unpcd.c
+v2tp.o: $(SLALIB)/v2tp.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/v2tp.c
+vdv.o: $(SLALIB)/vdv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/vdv.c
+vn.o: $(SLALIB)/vn.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/vn.c
+vxv.o: $(SLALIB)/vxv.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/vxv.c
+xy2xy.o: $(SLALIB)/xy2xy.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/xy2xy.c
+zd.o: $(SLALIB)/zd.c
+	$(CC) -c -o $@ $(CFLAGS) $(SLALIB)/zd.c

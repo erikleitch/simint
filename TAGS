@@ -1,0 +1,1862 @@
+
+simint_src/fitsio.c,897
+typedef int (*WRITEFN)WRITEFN17,326
+typedef int (*READFN)READFN22,495
+} Phdu;Phdu31,682
+Phdu phdus[35,802
+int nphdu 93,2736
+int writevis(108,3215
+int new_writevis(145,3990
+int writedat(180,4725
+int write_phdu(190,5002
+int put_phdu(440,12366
+int null_str(484,13316
+int flt_str(491,13477
+int int_str(503,13736
+int log_str(515,13999
+int str_str(527,14233
+int rd_null(550,14736
+int rd_flt(557,14908
+int rd_int(566,15121
+int rd_log(575,15314
+int rd_str(587,15544
+int rd_bunit(601,15925
+int rd_axis(620,16383
+Header *new_Header(639,16831
+Header *del_Header(709,18442
+char *decstring(723,18728
+char *rastring(754,19357
+int write_antable(782,19897
+static int write_tabentry(902,23746
+int getheader(919,24219
+int readfits(1064,28628
+int new_Axes(1197,32643
+int write_fqtable(1226,33732
+static int write_fqentry(1351,37576
+void cp_4r4(1432,39518
+void cp_8r8(1446,39899
+
+simint_src/fourier.c,328
+#define DEBUG14,218
+float *zeropad_complex(44,1428
+float *zeropad_real(124,3499
+float *zeropad1d(201,5432
+float *grid2d(234,6247
+float *grid(301,7917
+void rvgrid(361,9253
+void rvgrid2d(426,10680
+void fft_shift(517,13558
+float gauss(551,14391
+float gauss2d(568,14731
+Image *uvtrans(602,15627
+float *invert(668,17433
+
+simint_src/fourn.c,41
+#define SWAP(SWAP2,18
+void fourn(4,65
+
+simint_src/image.c,674
+} images=21,558
+Axiscard fitsaxes[26,678
+int nfitsaxes 38,1039
+Bunitcard fitsunits[43,1193
+int nfitsunits 63,1747
+Image *get_image(79,2218
+int add_image(96,2679
+Image *imfind(127,3504
+Image *rem_image(142,3831
+void zap_images(164,4301
+int imindex(186,4721
+Image *del_Image(205,5148
+Image *new_Image(240,5917
+Fitshead *new_Fitshead(323,8104
+Bunit parseUnits(372,9173
+char* printUnits(387,9529
+int copy_Fitshead(401,9798
+Fitshead *del_Fitshead(451,10974
+int native_to_radian(487,11799
+int native_to_jansky(535,12797
+static float dplanck(585,13945
+static float dplanckRJ(594,14151
+static double planckX(613,14555
+static double comptonYToDtemp(640,15262
+
+simint_src/imgen.c,58
+float *imgen(35,960
+Fitshead *imgen_get_header(281,8257
+
+simint_src/rand.c,98
+#define RAND_MAX 9,114
+float frand(22,788
+float uniform_rand(80,2245
+float gauss_rand(91,2535
+
+simint_src/tksimint.c,3242
+#define ATI33,510
+enum {IMAGE_SIZE=38,576
+enum {SLICE_SIZE=42,650
+} image_functions[60,1168
+#define COUNT(COUNT190,7322
+Array arrays[195,7479
+int narray 207,8201
+TclVar Wt[211,8323
+int nwt 220,8494
+int Grid[225,8561
+Gridparms Gridwdth 226,8583
+float Dasix[231,8683
+float Dasiy[247,8864
+float Szax[266,9084
+float Szay[277,9184
+int main(299,9745
+int MAIN__(323,10354
+static int Demo_AppInit(330,10541
+static int create_simint(378,12212
+static Simint *new_Simint(418,13707
+static Simint *del_Simint(495,15832
+static void Simint_DeleteProc(542,16847
+static int simint_instance_command(564,17717
+static int simint_antpos_command(662,22269
+static int simint_antarray_command(717,24161
+static int draw_ants(810,26369
+static int draw_frames(955,31159
+static int draw_uvframe(1034,33433
+static int drawants(1071,34348
+static int draw_xyframe(1103,35087
+static int simint_addant_command(1161,37056
+static int simint_markvis_command(1222,39210
+static int simint_markant_command(1286,41593
+static int addant(1337,43246
+static int simint_writevis_command(1472,47428
+static int simint_newwritevis_command(1530,49418
+static int simint_writeant_command(1597,51572
+static int simint_zapant_command(1649,53427
+static int simint_xyframe_command(1680,54796
+static int simint_uvframe_command(1711,56172
+static int simint_drawframes_command(1742,57551
+static int simint_uvzoom_command(1782,59160
+static int simint_xyzoom_command(1859,61710
+static int simint_powspec_command(1942,64427
+static int simint_writedat_command(2104,69020
+static int simint_recolor_image_command(2169,71274
+static IMAGE_FN(2213,72418
+static IMAGE_FN(2228,72842
+static IMAGE_FN(2241,73182
+static IMAGE_FN(2254,73551
+static IMAGE_FN(2267,73903
+static IMAGE_FN(2280,74258
+static int valid_sim_script(2297,74819
+#define REQUIRED_HEADER 2299,74861
+static int simint_compvis_command(2336,76100
+static int simint_radplot_command(2389,77696
+static int simint_compbeam_command(2428,78859
+static int compvis(2472,80082
+static int radplot(2614,84234
+int write_vis(2784,88914
+int write_sepvis(3116,98537
+static int plotbeam(3352,105132
+static int plotwin(3476,108628
+static int markant(3608,112367
+static int markvis(3674,113953
+static int add_Ant(3821,117876
+static AntType *add_AntType(3857,118797
+Ant *rem_Ant(3883,119479
+Ant *new_Ant(3913,120130
+Ant *del_Ant(3938,120807
+static int zap_AntTypes(3951,121050
+static int zap_ant(3967,121383
+double decfloat(3988,121829
+double rafloat(4003,122134
+void getXYZ(4017,122521
+static int newfft(4053,123559
+static int simint_compwin_command(4177,126984
+static int getpar(4216,127997
+int tcl_fltval(4233,128434
+int tcl_intval(4248,128831
+int tcl_raval(4263,129226
+int tcl_decval(4278,129627
+double cluster_model(4294,130008
+int writeant(4303,130214
+int getobs(4318,130758
+double getsysdate(4353,132277
+int plotim(4418,133727
+float *checkop(4467,134910
+static int simint_redraw_command(4573,137538
+static int obsim(4614,138535
+static int simint_ptsrc_command(4695,140925
+static int simint_rfits_command(4985,148231
+static int simint_imslct_command(5089,150442
+static int simint_obsim_command(5139,151568
+int copy_header(5176,152379
+int fill_uvheader(5222,153749
+
+simint_src/vis.c,724
+#define CONV_SIG 30,524
+#define NMASK 31,550
+typedef struct FT FT35,637
+} FT;FT41,851
+VisList *construct_list(66,2279
+static VisList *add_VisList(97,3430
+static VisList *del_VisList(133,4302
+int new_write_vis(187,5921
+int new_write_vis2(564,16848
+static int obsim(885,26627
+static int obsim2(994,29391
+static int imvis_save(1090,31743
+static int imvis(1288,37084
+static int imvis2(1450,41315
+static FT *new_FT(1642,46158
+static FT *new_FT2(1702,47867
+static FT *del_FT(1756,49420
+static int calc_primary_beam(1779,49854
+static int calc_primary_beam2(1972,55027
+static Fitshead *get_uvheader(2105,58377
+static int apfield(2255,61882
+static float bessj0(2308,63321
+static int beam_envelope(2352,64733
+
+simint_src/vplot.c,999
+int im_grey(28,735
+    G_CUR 65,1836
+    G_FLG 66,1855
+    G_CUT 67,1920
+    G_CAN 68,1939
+    G_DEF 69,1958
+    G_FID 71,1978
+    G_GREY 72,1997
+    G_HELP 73,2016
+    G_INS 74,2035
+    G_FIT 75,2054
+    G_RAD 76,2073
+    G_DIS 77,2092
+    G_OVRPLT=79,2112
+    G_COPY 80,2131
+    G_HEAT 81,2150
+    G_RAIN 82,2169
+    G_STAT 83,2188
+    G_HORI 85,2208
+    G_VERT 86,2227
+    G_QUIT 88,2247
+    G_YSC 89,2266
+    G_ZOOM 90,2285
+int v_grey2(868,21426
+    G_CUR 897,22376
+    G_FLG 898,22395
+    G_CUT 899,22460
+    G_CAN 900,22479
+    G_DEF 901,22498
+    G_FID 903,22518
+    G_GREY 904,22537
+    G_HELP 905,22556
+    G_INS 906,22575
+    G_FIT 907,22594
+    G_RAD 908,22613
+    G_DIS 909,22632
+    G_OVRPLT=911,22652
+    G_COPY 912,22671
+    G_HEAT 913,22690
+    G_RAIN 914,22709
+    G_STAT 915,22728
+    G_HORI 917,22748
+    G_VERT 918,22767
+    G_QUIT 920,22787
+    G_YSC 921,22806
+    G_ZOOM 922,22825
+int v_hdraw(1611,39630
+int v_radplot(1686,41025
+
+logio_src/logio.c,256
+} lg 19,614
+FILE *logfile(38,1169
+static FILE *closelog(89,2448
+int lprintf(133,3915
+int lputs(156,4548
+int lputc(171,5039
+int log_streams(199,6105
+static void logerror(225,6795
+int vlprintf(247,7601
+static LOGFN(264,8165
+int logtofile(283,8958
+
+logio_src/print.c,253
+} Options;Options19,620
+enum {LPBUFF_MAX=28,912
+int lprint(48,1834
+	enum {MAX_FORM=133,4079
+static char *get_flags(281,8032
+static int get_int(323,9144
+static void ret_total(353,9896
+static int space_pad(385,10802
+static int lperror(413,11627
+
+recio_src/recio.c,381
+#define SEEK_SET 14,246
+#define SEEK_CUR 18,290
+Recio *new_Recio(43,1354
+Recio *del_Recio(104,2933
+int rec_read(142,4075
+int rec_write(234,6424
+int rec_seek(314,8499
+static int rec_open(374,10329
+int rec_pad(447,12370
+void rec_rewind(514,13751
+static int rec_bad(541,14577
+int rec_flush(559,15043
+int rec_eof(581,15483
+int rec_error(603,15917
+int rec_tell(622,16536
+
+slalib_src/cldj.c,19
+void slaCldj 3,40
+
+fftwc_src/config.c,229
+#define NOTW_CODELET(NOTW_CODELET27,1007
+#define NOTWI_CODELET(NOTWI_CODELET29,1063
+#define TWIDDLE_CODELET(TWIDDLE_CODELET32,1122
+#define TWIDDLEI_CODELET(TWIDDLEI_CODELET35,1179
+fftw_codelet_desc *fftw_config[101,4211
+
+fftwc_src/executor.c,314
+const char *fftw_version 29,957
+void fftw_strided_copy(35,1155
+static void executor_many(68,1926
+static void executor_many_vector(104,2750
+void fftw_executor_simple(212,5454
+static void executor_simple_inplace(324,8167
+static void executor_many_inplace(356,8817
+void fftw(402,9739
+void fftw_one(455,11254
+
+fftwc_src/fftwf77.c,282
+void F77_FUNC_(57,1923
+void F77_FUNC_(65,2144
+void F77_FUNC_(71,2252
+void F77_FUNC_(78,2473
+void fftw_reverse_int_array(84,2598
+void F77_FUNC_(95,2779
+void F77_FUNC_(105,3153
+void F77_FUNC_(113,3397
+void F77_FUNC_(121,3654
+void F77_FUNC_(127,3770
+void F77_FUNC_(134,3999
+
+fftwc_src/fftwnd.c,1005
+#define FFTWND_NBUFFERS 25,936
+#define FFTWND_DEFAULT_NBUFFERS 28,1007
+#define FFTWND_BUFFER_PADDING 31,1114
+static void init_test_array(35,1208
+double fftwnd_measure_runtime(48,1458
+fftwnd_plan fftwnd_create_plan_aux(108,2807
+fftw_plan *fftwnd_new_plan_array(157,3858
+fftw_plan *fftwnd_create_plans_generic(175,4268
+static int get_maxdim(221,5287
+int fftwnd_work_size(238,5747
+fftw_plan *fftwnd_create_plans_specific(249,6108
+fftwnd_plan fftwnd_create_plan_specific(307,7714
+fftwnd_plan fftw2d_create_plan_specific(414,10859
+fftwnd_plan fftw3d_create_plan_specific(428,11169
+fftwnd_plan fftwnd_create_plan(445,11540
+fftwnd_plan fftw2d_create_plan(451,11715
+fftwnd_plan fftw3d_create_plan(457,11881
+static void destroy_plan_array(465,12136
+void fftwnd_destroy_plan(481,12437
+void fftwnd_fprint_plan(504,12868
+void fftwnd_print_plan(539,13743
+void fftw_buffered(546,13900
+void fftwnd_aux(626,16134
+void fftwnd_aux_howmany(672,17521
+void fftwnd(720,19035
+void fftwnd_one(777,20280
+
+fftwc_src/fn_10.c,257
+static const fftw_real K250000000 33,1250
+static const fftw_real K559016994 34,1348
+static const fftw_real K587785252 35,1446
+static const fftw_real K951056516 36,1544
+void fftw_no_twiddle_10(45,1840
+fftw_codelet_desc fftw_no_twiddle_10_desc 271,7984
+
+fftwc_src/fn_11.c,515
+static const fftw_real K959492973 33,1253
+static const fftw_real K654860733 34,1351
+static const fftw_real K142314838 35,1449
+static const fftw_real K415415013 36,1547
+static const fftw_real K841253532 37,1645
+static const fftw_real K540640817 38,1743
+static const fftw_real K909631995 39,1841
+static const fftw_real K989821441 40,1939
+static const fftw_real K755749574 41,2037
+static const fftw_real K281732556 42,2135
+void fftw_no_twiddle_11(51,2431
+fftw_codelet_desc fftw_no_twiddle_11_desc 232,9564
+
+fftwc_src/fn_12.c,171
+static const fftw_real K866025403 33,1248
+static const fftw_real K500000000 34,1346
+void fftw_no_twiddle_12(43,1642
+fftw_codelet_desc fftw_no_twiddle_12_desc 312,8805
+
+fftwc_src/fn_13.c,950
+static const fftw_real K1_732050807 33,1252
+static const fftw_real K256247671 34,1352
+static const fftw_real K156891391 35,1450
+static const fftw_real K300238635 36,1548
+static const fftw_real K011599105 37,1646
+static const fftw_real K174138601 38,1744
+static const fftw_real K575140729 39,1842
+static const fftw_real K2_000000000 40,1940
+static const fftw_real K083333333 41,2040
+static const fftw_real K075902986 42,2138
+static const fftw_real K251768516 43,2236
+static const fftw_real K258260390 44,2334
+static const fftw_real K132983124 45,2432
+static const fftw_real K265966249 46,2530
+static const fftw_real K387390585 47,2628
+static const fftw_real K503537032 48,2726
+static const fftw_real K113854479 49,2824
+static const fftw_real K300462606 50,2922
+static const fftw_real K866025403 51,3020
+static const fftw_real K500000000 52,3118
+void fftw_no_twiddle_13(61,3414
+fftw_codelet_desc fftw_no_twiddle_13_desc 516,16612
+
+fftwc_src/fn_14.c,344
+static const fftw_real K222520933 33,1251
+static const fftw_real K900968867 34,1349
+static const fftw_real K623489801 35,1447
+static const fftw_real K433883739 36,1545
+static const fftw_real K781831482 37,1643
+static const fftw_real K974927912 38,1741
+void fftw_no_twiddle_14(47,2037
+fftw_codelet_desc fftw_no_twiddle_14_desc 345,11349
+
+fftwc_src/fn_15.c,344
+static const fftw_real K587785252 33,1252
+static const fftw_real K951056516 34,1350
+static const fftw_real K250000000 35,1448
+static const fftw_real K559016994 36,1546
+static const fftw_real K500000000 37,1644
+static const fftw_real K866025403 38,1742
+void fftw_no_twiddle_15(47,2038
+fftw_codelet_desc fftw_no_twiddle_15_desc 436,13081
+
+fftwc_src/fn_16.c,215
+static const fftw_real K923879532 33,1251
+static const fftw_real K382683432 34,1349
+static const fftw_real K707106781 35,1447
+void fftw_no_twiddle_16(44,1743
+fftw_codelet_desc fftw_no_twiddle_16_desc 429,12349
+
+fftwc_src/fn_1.c,82
+void fftw_no_twiddle_1(41,1437
+fftw_codelet_desc fftw_no_twiddle_1_desc 52,1724
+
+fftwc_src/fn_2.c,82
+void fftw_no_twiddle_2(41,1437
+fftw_codelet_desc fftw_no_twiddle_2_desc 58,1932
+
+fftwc_src/fn_32.c,388
+static const fftw_real K831469612 33,1253
+static const fftw_real K555570233 34,1351
+static const fftw_real K195090322 35,1449
+static const fftw_real K980785280 36,1547
+static const fftw_real K923879532 37,1645
+static const fftw_real K382683432 38,1743
+static const fftw_real K707106781 39,1841
+void fftw_no_twiddle_32(48,2137
+fftw_codelet_desc fftw_no_twiddle_32_desc 1032,30564
+
+fftwc_src/fn_3.c,168
+static const fftw_real K500000000 33,1246
+static const fftw_real K866025403 34,1344
+void fftw_no_twiddle_3(43,1637
+fftw_codelet_desc fftw_no_twiddle_3_desc 81,2706
+
+fftwc_src/fn_4.c,82
+void fftw_no_twiddle_4(41,1441
+fftw_codelet_desc fftw_no_twiddle_4_desc 92,2784
+
+fftwc_src/fn_5.c,255
+static const fftw_real K250000000 33,1247
+static const fftw_real K587785252 34,1345
+static const fftw_real K951056516 35,1443
+static const fftw_real K559016994 36,1541
+void fftw_no_twiddle_5(45,1834
+fftw_codelet_desc fftw_no_twiddle_5_desc 136,4283
+
+fftwc_src/fn_64.c,732
+static const fftw_real K555570233 33,1257
+static const fftw_real K831469612 34,1355
+static const fftw_real K881921264 35,1453
+static const fftw_real K471396736 36,1551
+static const fftw_real K290284677 37,1649
+static const fftw_real K956940335 38,1747
+static const fftw_real K980785280 39,1845
+static const fftw_real K195090322 40,1943
+static const fftw_real K995184726 41,2041
+static const fftw_real K098017140 42,2139
+static const fftw_real K773010453 43,2237
+static const fftw_real K634393284 44,2335
+static const fftw_real K923879532 45,2433
+static const fftw_real K382683432 46,2531
+static const fftw_real K707106781 47,2629
+void fftw_no_twiddle_64(56,2925
+fftw_codelet_desc fftw_no_twiddle_64_desc 2439,72710
+
+fftwc_src/fn_6.c,169
+static const fftw_real K866025403 33,1246
+static const fftw_real K500000000 34,1344
+void fftw_no_twiddle_6(43,1637
+fftw_codelet_desc fftw_no_twiddle_6_desc 147,4376
+
+fftwc_src/fn_7.c,341
+static const fftw_real K222520933 33,1248
+static const fftw_real K900968867 34,1346
+static const fftw_real K623489801 35,1444
+static const fftw_real K433883739 36,1542
+static const fftw_real K974927912 37,1640
+static const fftw_real K781831482 38,1738
+void fftw_no_twiddle_7(47,2031
+fftw_codelet_desc fftw_no_twiddle_7_desc 160,5720
+
+fftwc_src/fn_8.c,126
+static const fftw_real K707106781 33,1246
+void fftw_no_twiddle_8(42,1539
+fftw_codelet_desc fftw_no_twiddle_8_desc 191,5517
+
+fftwc_src/fn_9.c,427
+static const fftw_real K939692620 33,1249
+static const fftw_real K342020143 34,1347
+static const fftw_real K984807753 35,1445
+static const fftw_real K173648177 36,1543
+static const fftw_real K642787609 37,1641
+static const fftw_real K766044443 38,1739
+static const fftw_real K866025403 39,1837
+static const fftw_real K500000000 40,1935
+void fftw_no_twiddle_9(49,2228
+fftw_codelet_desc fftw_no_twiddle_9_desc 265,8303
+
+fftwc_src/fni_10.c,259
+static const fftw_real K559016994 33,1253
+static const fftw_real K250000000 34,1351
+static const fftw_real K951056516 35,1449
+static const fftw_real K587785252 36,1547
+void fftwi_no_twiddle_10(45,1846
+fftw_codelet_desc fftwi_no_twiddle_10_desc 271,7991
+
+fftwc_src/fni_11.c,517
+static const fftw_real K959492973 33,1256
+static const fftw_real K654860733 34,1354
+static const fftw_real K142314838 35,1452
+static const fftw_real K415415013 36,1550
+static const fftw_real K841253532 37,1648
+static const fftw_real K540640817 38,1746
+static const fftw_real K909631995 39,1844
+static const fftw_real K989821441 40,1942
+static const fftw_real K755749574 41,2040
+static const fftw_real K281732556 42,2138
+void fftwi_no_twiddle_11(51,2437
+fftw_codelet_desc fftwi_no_twiddle_11_desc 232,9571
+
+fftwc_src/fni_12.c,173
+static const fftw_real K866025403 33,1251
+static const fftw_real K500000000 34,1349
+void fftwi_no_twiddle_12(43,1648
+fftw_codelet_desc fftwi_no_twiddle_12_desc 312,8812
+
+fftwc_src/fni_13.c,952
+static const fftw_real K1_732050807 33,1255
+static const fftw_real K156891391 34,1355
+static const fftw_real K256247671 35,1453
+static const fftw_real K300238635 36,1551
+static const fftw_real K011599105 37,1649
+static const fftw_real K174138601 38,1747
+static const fftw_real K575140729 39,1845
+static const fftw_real K2_000000000 40,1943
+static const fftw_real K083333333 41,2043
+static const fftw_real K075902986 42,2141
+static const fftw_real K251768516 43,2239
+static const fftw_real K258260390 44,2337
+static const fftw_real K132983124 45,2435
+static const fftw_real K503537032 46,2533
+static const fftw_real K113854479 47,2631
+static const fftw_real K265966249 48,2729
+static const fftw_real K387390585 49,2827
+static const fftw_real K866025403 50,2925
+static const fftw_real K300462606 51,3023
+static const fftw_real K500000000 52,3121
+void fftwi_no_twiddle_13(61,3420
+fftw_codelet_desc fftwi_no_twiddle_13_desc 516,16619
+
+fftwc_src/fni_14.c,346
+static const fftw_real K222520933 33,1254
+static const fftw_real K900968867 34,1352
+static const fftw_real K623489801 35,1450
+static const fftw_real K433883739 36,1548
+static const fftw_real K781831482 37,1646
+static const fftw_real K974927912 38,1744
+void fftwi_no_twiddle_14(47,2043
+fftw_codelet_desc fftwi_no_twiddle_14_desc 345,11356
+
+fftwc_src/fni_15.c,346
+static const fftw_real K951056516 33,1255
+static const fftw_real K587785252 34,1353
+static const fftw_real K250000000 35,1451
+static const fftw_real K559016994 36,1549
+static const fftw_real K500000000 37,1647
+static const fftw_real K866025403 38,1745
+void fftwi_no_twiddle_15(47,2044
+fftw_codelet_desc fftwi_no_twiddle_15_desc 436,13088
+
+fftwc_src/fni_16.c,217
+static const fftw_real K382683432 33,1254
+static const fftw_real K923879532 34,1352
+static const fftw_real K707106781 35,1450
+void fftwi_no_twiddle_16(44,1749
+fftw_codelet_desc fftwi_no_twiddle_16_desc 429,12356
+
+fftwc_src/fni_1.c,84
+void fftwi_no_twiddle_1(41,1443
+fftw_codelet_desc fftwi_no_twiddle_1_desc 52,1731
+
+fftwc_src/fni_2.c,84
+void fftwi_no_twiddle_2(41,1443
+fftw_codelet_desc fftwi_no_twiddle_2_desc 58,1939
+
+fftwc_src/fni_32.c,390
+static const fftw_real K195090322 33,1256
+static const fftw_real K980785280 34,1354
+static const fftw_real K831469612 35,1452
+static const fftw_real K555570233 36,1550
+static const fftw_real K382683432 37,1648
+static const fftw_real K923879532 38,1746
+static const fftw_real K707106781 39,1844
+void fftwi_no_twiddle_32(48,2143
+fftw_codelet_desc fftwi_no_twiddle_32_desc 1032,30571
+
+fftwc_src/fni_3.c,170
+static const fftw_real K500000000 33,1249
+static const fftw_real K866025403 34,1347
+void fftwi_no_twiddle_3(43,1643
+fftw_codelet_desc fftwi_no_twiddle_3_desc 81,2713
+
+fftwc_src/fni_4.c,84
+void fftwi_no_twiddle_4(41,1447
+fftw_codelet_desc fftwi_no_twiddle_4_desc 92,2791
+
+fftwc_src/fni_5.c,257
+static const fftw_real K250000000 33,1250
+static const fftw_real K951056516 34,1348
+static const fftw_real K587785252 35,1446
+static const fftw_real K559016994 36,1544
+void fftwi_no_twiddle_5(45,1840
+fftw_codelet_desc fftwi_no_twiddle_5_desc 136,4290
+
+fftwc_src/fni_64.c,734
+static const fftw_real K195090322 33,1260
+static const fftw_real K980785280 34,1358
+static const fftw_real K773010453 35,1456
+static const fftw_real K634393284 36,1554
+static const fftw_real K098017140 37,1652
+static const fftw_real K995184726 38,1750
+static const fftw_real K831469612 39,1848
+static const fftw_real K555570233 40,1946
+static const fftw_real K956940335 41,2044
+static const fftw_real K290284677 42,2142
+static const fftw_real K471396736 43,2240
+static const fftw_real K881921264 44,2338
+static const fftw_real K382683432 45,2436
+static const fftw_real K923879532 46,2534
+static const fftw_real K707106781 47,2632
+void fftwi_no_twiddle_64(56,2931
+fftw_codelet_desc fftwi_no_twiddle_64_desc 2439,72717
+
+fftwc_src/fni_6.c,171
+static const fftw_real K866025403 33,1249
+static const fftw_real K500000000 34,1347
+void fftwi_no_twiddle_6(43,1643
+fftw_codelet_desc fftwi_no_twiddle_6_desc 147,4383
+
+fftwc_src/fni_7.c,343
+static const fftw_real K222520933 33,1251
+static const fftw_real K900968867 34,1349
+static const fftw_real K623489801 35,1447
+static const fftw_real K433883739 36,1545
+static const fftw_real K974927912 37,1643
+static const fftw_real K781831482 38,1741
+void fftwi_no_twiddle_7(47,2037
+fftw_codelet_desc fftwi_no_twiddle_7_desc 160,5727
+
+fftwc_src/fni_8.c,128
+static const fftw_real K707106781 33,1249
+void fftwi_no_twiddle_8(42,1545
+fftw_codelet_desc fftwi_no_twiddle_8_desc 191,5524
+
+fftwc_src/fni_9.c,429
+static const fftw_real K642787609 33,1252
+static const fftw_real K766044443 34,1350
+static const fftw_real K939692620 35,1448
+static const fftw_real K342020143 36,1546
+static const fftw_real K984807753 37,1644
+static const fftw_real K173648177 38,1742
+static const fftw_real K866025403 39,1840
+static const fftw_real K500000000 40,1938
+void fftwi_no_twiddle_9(49,2234
+fftw_codelet_desc fftwi_no_twiddle_9_desc 265,8320
+
+fftwc_src/ftw_10.c,294
+static const fftw_real K587785252 33,1249
+static const fftw_real K951056516 34,1347
+static const fftw_real K250000000 35,1445
+static const fftw_real K559016994 36,1543
+void fftw_twiddle_10(45,1842
+static const int twiddle_order[363,11138
+fftw_codelet_desc fftw_twiddle_10_desc 365,11202
+
+fftwc_src/ftw_16.c,251
+static const fftw_real K382683432 33,1250
+static const fftw_real K923879532 34,1348
+static const fftw_real K707106781 35,1446
+void fftw_twiddle_16(44,1745
+static const int twiddle_order[599,17559
+fftw_codelet_desc fftw_twiddle_16_desc 601,17647
+
+fftwc_src/ftw_2.c,116
+void fftw_twiddle_2(41,1439
+static const int twiddle_order[74,2325
+fftw_codelet_desc fftw_twiddle_2_desc 76,2365
+
+fftwc_src/ftw_32.c,425
+static const fftw_real K195090322 33,1253
+static const fftw_real K980785280 34,1351
+static const fftw_real K831469612 35,1449
+static const fftw_real K555570233 36,1547
+static const fftw_real K382683432 37,1645
+static const fftw_real K923879532 38,1743
+static const fftw_real K707106781 39,1841
+void fftw_twiddle_32(48,2140
+static const int twiddle_order[1372,40193
+fftw_codelet_desc fftw_twiddle_32_desc 1374,40345
+
+fftwc_src/ftw_3.c,204
+static const fftw_real K866025403 33,1245
+static const fftw_real K500000000 34,1343
+void fftw_twiddle_3(43,1639
+static const int twiddle_order[108,3485
+fftw_codelet_desc fftw_twiddle_3_desc 110,3528
+
+fftwc_src/ftw_4.c,118
+void fftw_twiddle_4(41,1443
+static const int twiddle_order[130,3929
+fftw_codelet_desc fftw_twiddle_4_desc 132,3975
+
+fftwc_src/ftw_5.c,290
+static const fftw_real K250000000 33,1247
+static const fftw_real K559016994 34,1345
+static const fftw_real K587785252 35,1443
+static const fftw_real K951056516 36,1541
+void fftw_twiddle_5(45,1837
+static const int twiddle_order[182,5787
+fftw_codelet_desc fftw_twiddle_5_desc 184,5836
+
+fftwc_src/ftw_64.c,769
+static const fftw_real K290284677 33,1256
+static const fftw_real K956940335 34,1354
+static const fftw_real K881921264 35,1452
+static const fftw_real K471396736 36,1550
+static const fftw_real K555570233 37,1648
+static const fftw_real K831469612 38,1746
+static const fftw_real K773010453 39,1844
+static const fftw_real K634393284 40,1942
+static const fftw_real K098017140 41,2040
+static const fftw_real K995184726 42,2138
+static const fftw_real K980785280 43,2236
+static const fftw_real K195090322 44,2334
+static const fftw_real K707106781 45,2432
+static const fftw_real K923879532 46,2530
+static const fftw_real K382683432 47,2628
+void fftw_twiddle_64(56,2927
+static const int twiddle_order[3134,90938
+fftw_codelet_desc fftw_twiddle_64_desc 3136,91218
+
+fftwc_src/ftw_6.c,204
+static const fftw_real K500000000 33,1247
+static const fftw_real K866025403 34,1345
+void fftw_twiddle_6(43,1641
+static const int twiddle_order[207,6270
+fftw_codelet_desc fftw_twiddle_6_desc 209,6322
+
+fftwc_src/ftw_7.c,376
+static const fftw_real K222520933 33,1247
+static const fftw_real K900968867 34,1345
+static const fftw_real K623489801 35,1443
+static const fftw_real K433883739 36,1541
+static const fftw_real K974927912 37,1639
+static const fftw_real K781831482 38,1737
+void fftw_twiddle_7(47,2033
+static const int twiddle_order[231,7770
+fftw_codelet_desc fftw_twiddle_7_desc 233,7825
+
+fftwc_src/ftw_8.c,161
+static const fftw_real K707106781 33,1247
+void fftw_twiddle_8(42,1543
+static const int twiddle_order[273,7873
+fftw_codelet_desc fftw_twiddle_8_desc 275,7931
+
+fftwc_src/ftw_9.c,464
+static const fftw_real K939692620 33,1247
+static const fftw_real K342020143 34,1345
+static const fftw_real K984807753 35,1443
+static const fftw_real K173648177 36,1541
+static const fftw_real K642787609 37,1639
+static const fftw_real K766044443 38,1737
+static const fftw_real K500000000 39,1835
+static const fftw_real K866025403 40,1933
+void fftw_twiddle_9(49,2229
+static const int twiddle_order[358,11227
+fftw_codelet_desc fftw_twiddle_9_desc 360,11288
+
+fftwc_src/ftwi_10.c,296
+static const fftw_real K951056516 33,1252
+static const fftw_real K587785252 34,1350
+static const fftw_real K250000000 35,1448
+static const fftw_real K559016994 36,1546
+void fftwi_twiddle_10(45,1848
+static const int twiddle_order[363,11145
+fftw_codelet_desc fftwi_twiddle_10_desc 365,11209
+
+fftwc_src/ftwi_16.c,253
+static const fftw_real K382683432 33,1253
+static const fftw_real K923879532 34,1351
+static const fftw_real K707106781 35,1449
+void fftwi_twiddle_16(44,1751
+static const int twiddle_order[599,17566
+fftw_codelet_desc fftwi_twiddle_16_desc 601,17654
+
+fftwc_src/ftwi_2.c,118
+void fftwi_twiddle_2(41,1445
+static const int twiddle_order[74,2332
+fftw_codelet_desc fftwi_twiddle_2_desc 76,2372
+
+fftwc_src/ftwi_32.c,427
+static const fftw_real K555570233 33,1256
+static const fftw_real K831469612 34,1354
+static const fftw_real K980785280 35,1452
+static const fftw_real K195090322 36,1550
+static const fftw_real K923879532 37,1648
+static const fftw_real K382683432 38,1746
+static const fftw_real K707106781 39,1844
+void fftwi_twiddle_32(48,2146
+static const int twiddle_order[1372,40200
+fftw_codelet_desc fftwi_twiddle_32_desc 1374,40352
+
+fftwc_src/ftwi_3.c,206
+static const fftw_real K866025403 33,1248
+static const fftw_real K500000000 34,1346
+void fftwi_twiddle_3(43,1645
+static const int twiddle_order[108,3492
+fftw_codelet_desc fftwi_twiddle_3_desc 110,3535
+
+fftwc_src/ftwi_4.c,120
+void fftwi_twiddle_4(41,1449
+static const int twiddle_order[130,3936
+fftw_codelet_desc fftwi_twiddle_4_desc 132,3982
+
+fftwc_src/ftwi_5.c,292
+static const fftw_real K559016994 33,1250
+static const fftw_real K250000000 34,1348
+static const fftw_real K951056516 35,1446
+static const fftw_real K587785252 36,1544
+void fftwi_twiddle_5(45,1843
+static const int twiddle_order[182,5794
+fftw_codelet_desc fftwi_twiddle_5_desc 184,5843
+
+fftwc_src/ftwi_64.c,771
+static const fftw_real K098017140 33,1259
+static const fftw_real K995184726 34,1357
+static const fftw_real K773010453 35,1455
+static const fftw_real K634393284 36,1553
+static const fftw_real K195090322 37,1651
+static const fftw_real K980785280 38,1749
+static const fftw_real K471396736 39,1847
+static const fftw_real K881921264 40,1945
+static const fftw_real K956940335 41,2043
+static const fftw_real K290284677 42,2141
+static const fftw_real K831469612 43,2239
+static const fftw_real K555570233 44,2337
+static const fftw_real K707106781 45,2435
+static const fftw_real K382683432 46,2533
+static const fftw_real K923879532 47,2631
+void fftwi_twiddle_64(56,2933
+static const int twiddle_order[3134,90945
+fftw_codelet_desc fftwi_twiddle_64_desc 3136,91225
+
+fftwc_src/ftwi_6.c,206
+static const fftw_real K500000000 33,1250
+static const fftw_real K866025403 34,1348
+void fftwi_twiddle_6(43,1647
+static const int twiddle_order[207,6277
+fftw_codelet_desc fftwi_twiddle_6_desc 209,6329
+
+fftwc_src/ftwi_7.c,378
+static const fftw_real K222520933 33,1250
+static const fftw_real K900968867 34,1348
+static const fftw_real K623489801 35,1446
+static const fftw_real K433883739 36,1544
+static const fftw_real K974927912 37,1642
+static const fftw_real K781831482 38,1740
+void fftwi_twiddle_7(47,2039
+static const int twiddle_order[231,7777
+fftw_codelet_desc fftwi_twiddle_7_desc 233,7832
+
+fftwc_src/ftwi_8.c,163
+static const fftw_real K707106781 33,1250
+void fftwi_twiddle_8(42,1549
+static const int twiddle_order[273,7880
+fftw_codelet_desc fftwi_twiddle_8_desc 275,7938
+
+fftwc_src/ftwi_9.c,466
+static const fftw_real K642787609 33,1250
+static const fftw_real K766044443 34,1348
+static const fftw_real K939692620 35,1446
+static const fftw_real K342020143 36,1544
+static const fftw_real K984807753 37,1642
+static const fftw_real K173648177 38,1740
+static const fftw_real K500000000 39,1838
+static const fftw_real K866025403 40,1936
+void fftwi_twiddle_9(49,2235
+static const int twiddle_order[358,11234
+fftw_codelet_desc fftwi_twiddle_9_desc 360,11295
+
+fftwc_src/generic.c,70
+void fftw_twiddle_generic(28,925
+void fftwi_twiddle_generic(66,1846
+
+fftwc_src/malloc.c,629
+fftw_malloc_type_function fftw_malloc_hook 38,1096
+fftw_free_type_function fftw_free_hook 39,1144
+fftw_die_type_function fftw_die_hook 40,1188
+static int fftw_malloc_cnt 46,1390
+static int fftw_malloc_total 57,1740
+#define MAGIC 59,1821
+#define PAD_FACTOR 60,1846
+#define TWOINTS 61,1867
+#define VERBOSE_ALLOCATION 63,1902
+#define WHEN_VERBOSE(WHEN_VERBOSE66,1955
+#define WHEN_VERBOSE(WHEN_VERBOSE68,1987
+void *fftw_malloc(71,2019
+void fftw_free(100,2693
+void *fftw_malloc(165,4316
+void fftw_free(183,4546
+void fftw_die(197,4723
+void fftw_check_memory_leaks(208,4930
+void fftw_print_max_memory_usage(238,5699
+
+fftwc_src/planner.c,487
+fftw_plan_hook_ptr fftw_plan_hook 38,1178
+static void init_test_array(40,1242
+static double fftw_measure_runtime(54,1542
+static void compute_cost(109,2739
+static void run_plan_hooks(122,3084
+#define FOR_ALL_CODELETS(FOR_ALL_CODELETS132,3248
+static fftw_plan planner_wisdom(150,3907
+static fftw_plan planner_normal(230,6094
+static fftw_plan planner(388,10642
+fftw_plan fftw_create_plan_specific(426,11615
+fftw_plan fftw_create_plan(455,12345
+void fftw_destroy_plan(477,12865
+
+fftwc_src/putils.c,1212
+int fftw_node_cnt 35,1062
+int fftw_plan_cnt 36,1085
+#define NOTW_OPTIMAL_SIZE 42,1244
+#define TWIDDLE_OPTIMAL_SIZE 43,1273
+#define IS_POWER_OF_TWO(IS_POWER_OF_TWO45,1306
+fftw_plan_node *fftw_make_node(48,1398
+void fftw_use_node(57,1583
+fftw_plan_node *fftw_make_node_notw(62,1644
+fftw_plan_node *fftw_make_node_real2hc(73,1958
+fftw_plan_node *fftw_make_node_hc2real(85,2298
+fftw_plan_node *fftw_make_node_twiddle(97,2638
+fftw_plan_node *fftw_make_node_hc2hc(117,3237
+fftw_plan_node *fftw_make_node_generic(138,3865
+fftw_plan_node *fftw_make_node_rgeneric(159,4417
+fftw_rader_data *fftw_rader_top 191,5283
+static void fftw_destroy_rader(193,5324
+static void destroy_tree(220,5883
+fftw_plan fftw_make_plan(271,7096
+void fftw_complete_twiddle(301,7969
+void fftw_use_plan(353,9416
+void fftw_destroy_plan_internal(358,9471
+void fftw_make_empty_table(372,9696
+void fftw_insert(377,9775
+fftw_plan fftw_lookup(384,9923
+void fftw_destroy_table(395,10160
+double fftw_estimate_node(405,10320
+fftw_plan fftw_pick_better(455,11579
+int fftw_factor(473,11890
+static void print_node(490,12138
+void fftw_fprint_plan(541,13647
+void fftw_print_plan(552,13953
+size_t fftw_sizeof_fftw_real(557,14026
+
+fftwc_src/rader.c,389
+#define WHEN_DEBUG(WHEN_DEBUG37,1105
+#define WHEN_DEBUG(WHEN_DEBUG39,1135
+static int power_mod(43,1214
+static int period(59,1582
+static int find_generator(73,1888
+static fftw_rader_data *create_rader_aux(87,2176
+static fftw_rader_data *fftw_create_rader(152,3957
+void fftw_twiddle_rader(176,4678
+void fftwi_twiddle_rader(259,7144
+fftw_plan_node *fftw_make_node_rader(350,10044
+
+fftwc_src/timer.c,370
+fftw_time get_Mac_microseconds(49,1421
+fftw_time fftw_time_diff(67,1825
+static LARGE_INTEGER gFreq;100,2494
+static int gHaveHiResTimer 101,2522
+static int gFirstTime 102,2554
+unsigned long GetPerfTime(104,2582
+double GetPerfSec(123,2930
+#define gettimeofday 140,3307
+fftw_time fftw_gettimeofday_get_time(143,3352
+fftw_time fftw_gettimeofday_time_diff(150,3467
+
+fftwc_src/twiddle.c,365
+#define TRUE 38,1153
+#define FALSE 42,1197
+int fftw_safe_mulmod(48,1379
+static fftw_complex *fftw_compute_rader_twiddle(60,1639
+static fftw_complex *fftw_compute_twiddle(86,2391
+static fftw_twiddle *twlist 144,4007
+int fftw_twiddle_size 145,4057
+static int compatible(148,4193
+fftw_twiddle *fftw_create_twiddle(180,4971
+void fftw_destroy_twiddle(206,5596
+
+fftwc_src/wisdom.c,644
+struct wisdom wisdom29,914
+static struct wisdom *wisdom_list 44,1310
+int fftw_wisdom_lookup(46,1368
+void fftw_wisdom_add(85,2396
+void fftw_forget_wisdom(125,3517
+static const char *WISDOM_FORMAT_VERSION 139,3750
+static void emit_string(143,3859
+static void emit_int(149,3952
+void fftw_export_wisdom(158,4113
+static int next_char;194,5020
+static fftw_status input_error;196,5080
+static void read_char(198,5113
+static void eat_blanks(207,5303
+static int read_int(213,5395
+#define EXPECT(EXPECT237,5809
+#define EXPECT_INT(EXPECT_INT246,6035
+#define EXPECT_STRING(EXPECT_STRING253,6269
+fftw_status fftw_import_wisdom(262,6469
+
+fftwc_src/wisdomio.c,365
+static void file_emitter(27,916
+void fftw_export_wisdom_to_file(32,995
+static int file_get_input(38,1132
+fftw_status fftw_import_wisdom_from_file(43,1208
+static void emission_counter(52,1448
+static void string_emitter(59,1554
+char *fftw_export_wisdom_to_string(67,1709
+static int string_get_input(87,2136
+fftw_status fftw_import_wisdom_from_string(97,2305
+
+fftwr_src/fcr_10.c,302
+static const fftw_real K500000000 33,1246
+static const fftw_real K1_902113032 34,1344
+static const fftw_real K1_175570504 35,1444
+static const fftw_real K2_000000000 36,1544
+static const fftw_real K1_118033988 37,1644
+void fftw_hc2real_10(46,1945
+fftw_codelet_desc fftw_hc2real_10_desc 144,4697
+
+fftwr_src/fcr_11.c,568
+static const fftw_real K2_000000000 33,1247
+static const fftw_real K1_918985947 34,1347
+static const fftw_real K1_309721467 35,1447
+static const fftw_real K284629676 36,1547
+static const fftw_real K830830026 37,1645
+static const fftw_real K1_682507065 38,1743
+static const fftw_real K563465113 39,1843
+static const fftw_real K1_511499148 40,1941
+static const fftw_real K1_979642883 41,2041
+static const fftw_real K1_819263990 42,2141
+static const fftw_real K1_081281634 43,2241
+void fftw_hc2real_11(52,2542
+fftw_codelet_desc fftw_hc2real_11_desc 113,5458
+
+fftwr_src/fcr_128.c,1465
+static const fftw_real K555570233 33,1256
+static const fftw_real K831469612 34,1354
+static const fftw_real K195090322 35,1452
+static const fftw_real K980785280 36,1550
+static const fftw_real K995184726 37,1648
+static const fftw_real K098017140 38,1746
+static const fftw_real K471396736 39,1844
+static const fftw_real K881921264 40,1942
+static const fftw_real K803207531 41,2040
+static const fftw_real K595699304 42,2138
+static const fftw_real K989176509 43,2236
+static const fftw_real K146730474 44,2334
+static const fftw_real K773010453 45,2432
+static const fftw_real K634393284 46,2530
+static const fftw_real K290284677 47,2628
+static const fftw_real K956940335 48,2726
+static const fftw_real K336889853 49,2824
+static const fftw_real K941544065 50,2922
+static const fftw_real K903989293 51,3020
+static const fftw_real K427555093 52,3118
+static const fftw_real K998795456 53,3216
+static const fftw_real K049067674 54,3314
+static const fftw_real K671558954 55,3412
+static const fftw_real K740951125 56,3510
+static const fftw_real K514102744 57,3608
+static const fftw_real K857728610 58,3706
+static const fftw_real K242980179 59,3804
+static const fftw_real K970031253 60,3902
+static const fftw_real K765366864 61,4000
+static const fftw_real K1_847759065 62,4098
+static const fftw_real K1_414213562 63,4198
+static const fftw_real K2_000000000 64,4298
+void fftw_hc2real_128(73,4602
+fftw_codelet_desc fftw_hc2real_128_desc 2554,78364
+
+fftwr_src/fcr_12.c,169
+static const fftw_real K1_732050807 33,1246
+static const fftw_real K2_000000000 34,1346
+void fftw_hc2real_12(43,1647
+fftw_codelet_desc fftw_hc2real_12_desc 158,4796
+
+fftwr_src/fcr_13.c,904
+static const fftw_real K531932498 33,1248
+static const fftw_real K774781170 34,1346
+static const fftw_real K1_007074065 35,1444
+static const fftw_real K227708958 36,1544
+static const fftw_real K265966249 37,1642
+static const fftw_real K516520780 38,1740
+static const fftw_real K151805972 39,1838
+static const fftw_real K503537032 40,1936
+static const fftw_real K166666666 41,2034
+static const fftw_real K600925212 42,2132
+static const fftw_real K500000000 43,2230
+static const fftw_real K348277202 44,2328
+static const fftw_real K1_150281458 45,2426
+static const fftw_real K256247671 46,2526
+static const fftw_real K156891391 47,2624
+static const fftw_real K300238635 48,2722
+static const fftw_real K011599105 49,2820
+static const fftw_real K1_732050807 50,2918
+static const fftw_real K2_000000000 51,3018
+void fftw_hc2real_13(60,3319
+fftw_codelet_desc fftw_hc2real_13_desc 263,9169
+
+fftwr_src/fcr_14.c,390
+static const fftw_real K445041867 33,1247
+static const fftw_real K1_801937735 34,1345
+static const fftw_real K1_246979603 35,1445
+static const fftw_real K867767478 36,1545
+static const fftw_real K1_949855824 37,1643
+static const fftw_real K1_563662964 38,1743
+static const fftw_real K2_000000000 39,1843
+void fftw_hc2real_14(48,2144
+fftw_codelet_desc fftw_hc2real_14_desc 165,6063
+
+fftwr_src/fcr_15.c,390
+static const fftw_real K1_118033988 33,1248
+static const fftw_real K1_902113032 34,1348
+static const fftw_real K1_175570504 35,1448
+static const fftw_real K500000000 36,1548
+static const fftw_real K866025403 37,1646
+static const fftw_real K2_000000000 38,1744
+static const fftw_real K1_732050807 39,1844
+void fftw_hc2real_15(48,2145
+fftw_codelet_desc fftw_hc2real_15_desc 216,6952
+
+fftwr_src/fcr_16.c,257
+static const fftw_real K765366864 33,1247
+static const fftw_real K1_847759065 34,1345
+static const fftw_real K1_414213562 35,1445
+static const fftw_real K2_000000000 36,1545
+void fftw_hc2real_16(45,1846
+fftw_codelet_desc fftw_hc2real_16_desc 216,6497
+
+fftwr_src/fcr_1.c,76
+void fftw_hc2real_1(41,1438
+fftw_codelet_desc fftw_hc2real_1_desc 49,1688
+
+fftwr_src/fcr_2.c,76
+void fftw_hc2real_2(41,1438
+fftw_codelet_desc fftw_hc2real_2_desc 52,1790
+
+fftwr_src/fcr_32.c,430
+static const fftw_real K765366864 33,1250
+static const fftw_real K1_847759065 34,1348
+static const fftw_real K555570233 35,1448
+static const fftw_real K831469612 36,1546
+static const fftw_real K195090322 37,1644
+static const fftw_real K980785280 38,1742
+static const fftw_real K1_414213562 39,1840
+static const fftw_real K2_000000000 40,1940
+void fftw_hc2real_32(49,2241
+fftw_codelet_desc fftw_hc2real_32_desc 480,14395
+
+fftwr_src/fcr_3.c,166
+static const fftw_real K2_000000000 33,1240
+static const fftw_real K1_732050807 34,1340
+void fftw_hc2real_3(43,1638
+fftw_codelet_desc fftw_hc2real_3_desc 61,2206
+
+fftwr_src/fcr_4.c,121
+static const fftw_real K2_000000000 33,1240
+void fftw_hc2real_4(42,1538
+fftw_codelet_desc fftw_hc2real_4_desc 70,2308
+
+fftwr_src/fcr_5.c,299
+static const fftw_real K2_000000000 33,1243
+static const fftw_real K1_118033988 34,1343
+static const fftw_real K500000000 35,1443
+static const fftw_real K1_902113032 36,1541
+static const fftw_real K1_175570504 37,1641
+void fftw_hc2real_5(46,1939
+fftw_codelet_desc fftw_hc2real_5_desc 83,3059
+
+fftwr_src/fcr_64.c,775
+static const fftw_real K555570233 33,1252
+static const fftw_real K831469612 34,1350
+static const fftw_real K195090322 35,1448
+static const fftw_real K980785280 36,1546
+static const fftw_real K765366864 37,1644
+static const fftw_real K1_847759065 38,1742
+static const fftw_real K995184726 39,1842
+static const fftw_real K098017140 40,1940
+static const fftw_real K471396736 41,2038
+static const fftw_real K881921264 42,2136
+static const fftw_real K773010453 43,2234
+static const fftw_real K634393284 44,2332
+static const fftw_real K290284677 45,2430
+static const fftw_real K956940335 46,2528
+static const fftw_real K1_414213562 47,2626
+static const fftw_real K2_000000000 48,2726
+void fftw_hc2real_64(57,3027
+fftw_codelet_desc fftw_hc2real_64_desc 1101,33843
+
+fftwr_src/fcr_6.c,166
+static const fftw_real K2_000000000 33,1244
+static const fftw_real K1_732050807 34,1344
+void fftw_hc2real_6(43,1642
+fftw_codelet_desc fftw_hc2real_6_desc 85,2874
+
+fftwr_src/fcr_7.c,387
+static const fftw_real K2_000000000 33,1246
+static const fftw_real K1_801937735 34,1346
+static const fftw_real K445041867 35,1446
+static const fftw_real K1_246979603 36,1544
+static const fftw_real K867767478 37,1644
+static const fftw_real K1_949855824 38,1742
+static const fftw_real K1_563662964 39,1842
+void fftw_hc2real_7(48,2140
+fftw_codelet_desc fftw_hc2real_7_desc 86,3685
+
+fftwr_src/fcr_8.c,167
+static const fftw_real K1_414213562 33,1244
+static const fftw_real K2_000000000 34,1344
+void fftw_hc2real_8(43,1642
+fftw_codelet_desc fftw_hc2real_8_desc 109,3496
+
+fftwr_src/fcr_9.c,603
+static const fftw_real K984807753 33,1246
+static const fftw_real K173648177 34,1344
+static const fftw_real K300767466 35,1442
+static const fftw_real K1_705737063 36,1540
+static const fftw_real K642787609 37,1640
+static const fftw_real K766044443 38,1738
+static const fftw_real K1_326827896 39,1836
+static const fftw_real K1_113340798 40,1936
+static const fftw_real K500000000 41,2036
+static const fftw_real K866025403 42,2134
+static const fftw_real K2_000000000 43,2232
+static const fftw_real K1_732050807 44,2332
+void fftw_hc2real_9(53,2630
+fftw_codelet_desc fftw_hc2real_9_desc 145,5282
+
+fftwr_src/fhb_10.c,531
+static const fftw_real K250000000 33,1257
+static const fftw_real K951056516 34,1355
+static const fftw_real K587785252 35,1453
+static const fftw_real K559016994 36,1551
+static const fftw_real K500000000 37,1649
+static const fftw_real K1_902113032 38,1747
+static const fftw_real K1_175570504 39,1847
+static const fftw_real K2_000000000 40,1947
+static const fftw_real K1_118033988 41,2047
+void fftw_hc2hc_backward_10(50,2348
+static const int twiddle_order[569,16981
+fftw_codelet_desc fftw_hc2hc_backward_10_desc 571,17045
+
+fftwr_src/fhb_16.c,621
+static const fftw_real K1_961570560 33,1259
+static const fftw_real K390180644 34,1359
+static const fftw_real K1_111140466 35,1457
+static const fftw_real K1_662939224 36,1557
+static const fftw_real K707106781 37,1657
+static const fftw_real K382683432 38,1755
+static const fftw_real K923879532 39,1853
+static const fftw_real K765366864 40,1951
+static const fftw_real K1_847759065 41,2049
+static const fftw_real K1_414213562 42,2149
+static const fftw_real K2_000000000 43,2249
+void fftw_hc2hc_backward_16(52,2550
+static const int twiddle_order[964,28158
+fftw_codelet_desc fftw_hc2hc_backward_16_desc 966,28246
+
+fftwr_src/fhb_2.c,175
+static const fftw_real K2_000000000 33,1249
+void fftw_hc2hc_backward_2(42,1547
+static const int twiddle_order[94,2725
+fftw_codelet_desc fftw_hc2hc_backward_2_desc 96,2765
+
+fftwr_src/fhb_32.c,1149
+static const fftw_real K1_662939224 33,1261
+static const fftw_real K1_111140466 34,1361
+static const fftw_real K390180644 35,1461
+static const fftw_real K1_961570560 36,1559
+static const fftw_real K1_913880671 37,1659
+static const fftw_real K580569354 38,1759
+static const fftw_real K942793473 39,1857
+static const fftw_real K1_763842528 40,1955
+static const fftw_real K1_546020906 41,2055
+static const fftw_real K1_268786568 42,2155
+static const fftw_real K196034280 43,2255
+static const fftw_real K1_990369453 44,2353
+static const fftw_real K382683432 45,2453
+static const fftw_real K923879532 46,2551
+static const fftw_real K707106781 47,2649
+static const fftw_real K765366864 48,2747
+static const fftw_real K1_847759065 49,2845
+static const fftw_real K555570233 50,2945
+static const fftw_real K831469612 51,3043
+static const fftw_real K195090322 52,3141
+static const fftw_real K980785280 53,3239
+static const fftw_real K1_414213562 54,3337
+static const fftw_real K2_000000000 55,3437
+void fftw_hc2hc_backward_32(64,3738
+static const int twiddle_order[2291,66870
+fftw_codelet_desc fftw_hc2hc_backward_32_desc 2293,67022
+
+fftwr_src/fhb_3.c,308
+static const fftw_real K500000000 33,1252
+static const fftw_real K866025403 34,1350
+static const fftw_real K2_000000000 35,1448
+static const fftw_real K1_732050807 36,1548
+void fftw_hc2hc_backward_3(45,1846
+static const int twiddle_order[146,4429
+fftw_codelet_desc fftw_hc2hc_backward_3_desc 148,4472
+
+fftwr_src/fhb_4.c,222
+static const fftw_real K1_414213562 33,1253
+static const fftw_real K2_000000000 34,1353
+void fftw_hc2hc_backward_4(43,1651
+static const int twiddle_order[181,5220
+fftw_codelet_desc fftw_hc2hc_backward_4_desc 183,5266
+
+fftwr_src/fhb_5.c,527
+static const fftw_real K250000000 33,1254
+static const fftw_real K559016994 34,1352
+static const fftw_real K951056516 35,1450
+static const fftw_real K587785252 36,1548
+static const fftw_real K2_000000000 37,1646
+static const fftw_real K500000000 38,1746
+static const fftw_real K1_118033988 39,1844
+static const fftw_real K1_175570504 40,1944
+static const fftw_real K1_902113032 41,2044
+void fftw_hc2hc_backward_5(50,2342
+static const int twiddle_order[264,8179
+fftw_codelet_desc fftw_hc2hc_backward_5_desc 266,8228
+
+fftwr_src/fhb_6.c,308
+static const fftw_real K500000000 33,1254
+static const fftw_real K866025403 34,1352
+static const fftw_real K2_000000000 35,1450
+static const fftw_real K1_732050807 36,1550
+void fftw_hc2hc_backward_6(45,1848
+static const int twiddle_order[289,8362
+fftw_codelet_desc fftw_hc2hc_backward_6_desc 291,8414
+
+fftwr_src/fhb_7.c,703
+static const fftw_real K222520933 33,1256
+static const fftw_real K900968867 34,1354
+static const fftw_real K623489801 35,1452
+static const fftw_real K781831482 36,1550
+static const fftw_real K974927912 37,1648
+static const fftw_real K433883739 38,1746
+static const fftw_real K2_000000000 39,1844
+static const fftw_real K1_801937735 40,1944
+static const fftw_real K445041867 41,2044
+static const fftw_real K1_246979603 42,2142
+static const fftw_real K867767478 43,2242
+static const fftw_real K1_949855824 44,2340
+static const fftw_real K1_563662964 45,2440
+void fftw_hc2hc_backward_7(54,2738
+static const int twiddle_order[308,10794
+fftw_codelet_desc fftw_hc2hc_backward_7_desc 310,10849
+
+fftwr_src/fhb_8.c,355
+static const fftw_real K765366864 33,1255
+static const fftw_real K1_847759065 34,1353
+static const fftw_real K707106781 35,1453
+static const fftw_real K1_414213562 36,1551
+static const fftw_real K2_000000000 37,1651
+void fftw_hc2hc_backward_8(46,1949
+static const int twiddle_order[403,11647
+fftw_codelet_desc fftw_hc2hc_backward_8_desc 405,11705
+
+fftwr_src/fhb_9.c,1004
+static const fftw_real K663413948 33,1257
+static const fftw_real K556670399 34,1355
+static const fftw_real K296198132 35,1453
+static const fftw_real K150383733 36,1551
+static const fftw_real K813797681 37,1649
+static const fftw_real K852868531 38,1747
+static const fftw_real K939692620 39,1845
+static const fftw_real K342020143 40,1943
+static const fftw_real K984807753 41,2041
+static const fftw_real K173648177 42,2139
+static const fftw_real K300767466 43,2237
+static const fftw_real K1_705737063 44,2335
+static const fftw_real K642787609 45,2435
+static const fftw_real K766044443 46,2533
+static const fftw_real K1_326827896 47,2631
+static const fftw_real K1_113340798 48,2731
+static const fftw_real K500000000 49,2831
+static const fftw_real K866025403 50,2929
+static const fftw_real K2_000000000 51,3027
+static const fftw_real K1_732050807 52,3127
+void fftw_hc2hc_backward_9(61,3425
+static const int twiddle_order[552,18071
+fftw_codelet_desc fftw_hc2hc_backward_9_desc 554,18132
+
+fftwr_src/fhf_10.c,306
+static const fftw_real K587785252 33,1256
+static const fftw_real K951056516 34,1354
+static const fftw_real K250000000 35,1452
+static const fftw_real K559016994 36,1550
+void fftw_hc2hc_forward_10(45,1849
+static const int twiddle_order[549,16205
+fftw_codelet_desc fftw_hc2hc_forward_10_desc 551,16269
+
+fftwr_src/fhf_16.c,525
+static const fftw_real K277785116 33,1258
+static const fftw_real K415734806 34,1356
+static const fftw_real K490392640 35,1454
+static const fftw_real K097545161 36,1552
+static const fftw_real K1_414213562 37,1650
+static const fftw_real K2_000000000 38,1750
+static const fftw_real K707106781 39,1850
+static const fftw_real K923879532 40,1948
+static const fftw_real K382683432 41,2046
+void fftw_hc2hc_forward_16(50,2345
+static const int twiddle_order[963,27937
+fftw_codelet_desc fftw_hc2hc_forward_16_desc 965,28025
+
+fftwr_src/fhf_2.c,128
+void fftw_hc2hc_forward_2(41,1446
+static const int twiddle_order[96,2685
+fftw_codelet_desc fftw_hc2hc_forward_2_desc 98,2725
+
+fftwr_src/fhf_32.c,1131
+static const fftw_real K145142338 33,1260
+static const fftw_real K478470167 34,1358
+static const fftw_real K235698368 35,1456
+static const fftw_real K440960632 36,1554
+static const fftw_real K317196642 37,1652
+static const fftw_real K386505226 38,1750
+static const fftw_real K497592363 39,1848
+static const fftw_real K049008570 40,1946
+static const fftw_real K277785116 41,2044
+static const fftw_real K415734806 42,2142
+static const fftw_real K097545161 43,2240
+static const fftw_real K490392640 44,2338
+static const fftw_real K765366864 45,2436
+static const fftw_real K1_847759065 46,2534
+static const fftw_real K1_414213562 47,2634
+static const fftw_real K2_000000000 48,2734
+static const fftw_real K195090322 49,2834
+static const fftw_real K980785280 50,2932
+static const fftw_real K555570233 51,3030
+static const fftw_real K831469612 52,3128
+static const fftw_real K382683432 53,3226
+static const fftw_real K923879532 54,3324
+static const fftw_real K707106781 55,3422
+void fftw_hc2hc_forward_32(64,3721
+static const int twiddle_order[2300,67090
+fftw_codelet_desc fftw_hc2hc_forward_32_desc 2302,67242
+
+fftwr_src/fhf_3.c,216
+static const fftw_real K866025403 33,1251
+static const fftw_real K500000000 34,1349
+void fftw_hc2hc_forward_3(43,1645
+static const int twiddle_order[138,4109
+fftw_codelet_desc fftw_hc2hc_forward_3_desc 140,4152
+
+fftwr_src/fhf_4.c,173
+static const fftw_real K707106781 33,1251
+void fftw_hc2hc_forward_4(42,1547
+static const int twiddle_order[173,4876
+fftw_codelet_desc fftw_hc2hc_forward_4_desc 175,4922
+
+fftwr_src/fhf_5.c,302
+static const fftw_real K250000000 33,1253
+static const fftw_real K559016994 34,1351
+static const fftw_real K587785252 35,1449
+static const fftw_real K951056516 36,1547
+void fftw_hc2hc_forward_5(45,1843
+static const int twiddle_order[256,7589
+fftw_codelet_desc fftw_hc2hc_forward_5_desc 258,7638
+
+fftwr_src/fhf_6.c,216
+static const fftw_real K500000000 33,1253
+static const fftw_real K866025403 34,1351
+void fftw_hc2hc_forward_6(43,1647
+static const int twiddle_order[287,8136
+fftw_codelet_desc fftw_hc2hc_forward_6_desc 289,8188
+
+fftwr_src/fhf_7.c,390
+static const fftw_real K222520933 33,1255
+static const fftw_real K900968867 34,1353
+static const fftw_real K623489801 35,1451
+static const fftw_real K433883739 36,1549
+static const fftw_real K974927912 37,1647
+static const fftw_real K781831482 38,1745
+void fftw_hc2hc_forward_7(47,2041
+static const int twiddle_order[313,10271
+fftw_codelet_desc fftw_hc2hc_forward_7_desc 315,10326
+
+fftwr_src/fhf_8.c,261
+static const fftw_real K382683432 33,1254
+static const fftw_real K923879532 34,1352
+static const fftw_real K707106781 35,1450
+void fftw_hc2hc_forward_8(44,1746
+static const int twiddle_order[403,11326
+fftw_codelet_desc fftw_hc2hc_forward_8_desc 405,11384
+
+fftwr_src/fhf_9.c,1086
+static const fftw_real K250000000 33,1256
+static const fftw_real K433012701 34,1354
+static const fftw_real K1_532088886 35,1452
+static const fftw_real K1_879385241 36,1552
+static const fftw_real K347296355 37,1652
+static const fftw_real K1_285575219 38,1750
+static const fftw_real K684040286 39,1850
+static const fftw_real K1_969615506 40,1948
+static const fftw_real K342020143 41,2048
+static const fftw_real K813797681 42,2146
+static const fftw_real K939692620 43,2244
+static const fftw_real K296198132 44,2342
+static const fftw_real K852868531 45,2440
+static const fftw_real K173648177 46,2538
+static const fftw_real K556670399 47,2636
+static const fftw_real K766044443 48,2734
+static const fftw_real K984807753 49,2832
+static const fftw_real K150383733 50,2930
+static const fftw_real K642787609 51,3028
+static const fftw_real K663413948 52,3126
+static const fftw_real K866025403 53,3224
+static const fftw_real K500000000 54,3322
+void fftw_hc2hc_forward_9(63,3618
+static const int twiddle_order[513,17341
+fftw_codelet_desc fftw_hc2hc_forward_9_desc 515,17402
+
+fftwr_src/frc_10.c,251
+static const fftw_real K587785252 33,1246
+static const fftw_real K951056516 34,1344
+static const fftw_real K250000000 35,1442
+static const fftw_real K559016994 36,1540
+void fftw_real2hc_10(45,1839
+fftw_codelet_desc fftw_real2hc_10_desc 140,4446
+
+fftwr_src/frc_11.c,509
+static const fftw_real K654860733 33,1247
+static const fftw_real K142314838 34,1345
+static const fftw_real K959492973 35,1443
+static const fftw_real K415415013 36,1541
+static const fftw_real K841253532 37,1639
+static const fftw_real K989821441 38,1737
+static const fftw_real K909631995 39,1835
+static const fftw_real K281732556 40,1933
+static const fftw_real K540640817 41,2031
+static const fftw_real K755749574 42,2129
+void fftw_real2hc_11(51,2428
+fftw_codelet_desc fftw_real2hc_11_desc 115,5290
+
+fftwr_src/frc_128.c,1416
+static const fftw_real K242980179 33,1256
+static const fftw_real K970031253 34,1354
+static const fftw_real K514102744 35,1452
+static const fftw_real K857728610 36,1550
+static const fftw_real K595699304 37,1648
+static const fftw_real K803207531 38,1746
+static const fftw_real K146730474 39,1844
+static const fftw_real K989176509 40,1942
+static const fftw_real K471396736 41,2040
+static const fftw_real K881921264 42,2138
+static const fftw_real K956940335 43,2236
+static const fftw_real K290284677 44,2334
+static const fftw_real K336889853 45,2432
+static const fftw_real K941544065 46,2530
+static const fftw_real K427555093 47,2628
+static const fftw_real K903989293 48,2726
+static const fftw_real K634393284 49,2824
+static const fftw_real K773010453 50,2922
+static const fftw_real K671558954 51,3020
+static const fftw_real K740951125 52,3118
+static const fftw_real K049067674 53,3216
+static const fftw_real K998795456 54,3314
+static const fftw_real K995184726 55,3412
+static const fftw_real K098017140 56,3510
+static const fftw_real K555570233 57,3608
+static const fftw_real K831469612 58,3706
+static const fftw_real K195090322 59,3804
+static const fftw_real K980785280 60,3902
+static const fftw_real K382683432 61,4000
+static const fftw_real K923879532 62,4098
+static const fftw_real K707106781 63,4196
+void fftw_real2hc_128(72,4498
+fftw_codelet_desc fftw_real2hc_128_desc 2564,78152
+
+fftwr_src/frc_12.c,165
+static const fftw_real K866025403 33,1245
+static const fftw_real K500000000 34,1343
+void fftw_real2hc_12(43,1642
+fftw_codelet_desc fftw_real2hc_12_desc 154,4557
+
+fftwr_src/frc_13.c,943
+static const fftw_real K083333333 33,1248
+static const fftw_real K075902986 34,1346
+static const fftw_real K251768516 35,1444
+static const fftw_real K503537032 36,1542
+static const fftw_real K113854479 37,1640
+static const fftw_real K265966249 38,1738
+static const fftw_real K387390585 39,1836
+static const fftw_real K300462606 40,1934
+static const fftw_real K258260390 41,2032
+static const fftw_real K132983124 42,2130
+static const fftw_real K2_000000000 43,2228
+static const fftw_real K1_732050807 44,2328
+static const fftw_real K156891391 45,2428
+static const fftw_real K256247671 46,2526
+static const fftw_real K011599105 47,2624
+static const fftw_real K300238635 48,2722
+static const fftw_real K174138601 49,2820
+static const fftw_real K575140729 50,2918
+static const fftw_real K866025403 51,3016
+static const fftw_real K500000000 52,3114
+void fftw_real2hc_13(61,3413
+fftw_codelet_desc fftw_real2hc_13_desc 261,9106
+
+fftwr_src/frc_14.c,337
+static const fftw_real K900968867 33,1247
+static const fftw_real K222520933 34,1345
+static const fftw_real K623489801 35,1443
+static const fftw_real K433883739 36,1541
+static const fftw_real K974927912 37,1639
+static const fftw_real K781831482 38,1737
+void fftw_real2hc_14(47,2036
+fftw_codelet_desc fftw_real2hc_14_desc 161,5715
+
+fftwr_src/frc_15.c,509
+static const fftw_real K509036960 33,1248
+static const fftw_real K823639103 34,1346
+static const fftw_real K250000000 35,1444
+static const fftw_real K559016994 36,1542
+static const fftw_real K587785252 37,1640
+static const fftw_real K951056516 38,1738
+static const fftw_real K484122918 39,1836
+static const fftw_real K216506350 40,1934
+static const fftw_real K866025403 41,2032
+static const fftw_real K500000000 42,2130
+void fftw_real2hc_15(51,2429
+fftw_codelet_desc fftw_real2hc_15_desc 223,7331
+
+fftwr_src/frc_16.c,208
+static const fftw_real K707106781 33,1246
+static const fftw_real K923879532 34,1344
+static const fftw_real K382683432 35,1442
+void fftw_real2hc_16(44,1741
+fftw_codelet_desc fftw_real2hc_16_desc 208,6117
+
+fftwr_src/frc_1.c,76
+void fftw_real2hc_1(41,1438
+fftw_codelet_desc fftw_real2hc_1_desc 49,1683
+
+fftwr_src/frc_2.c,76
+void fftw_real2hc_2(41,1438
+fftw_codelet_desc fftw_real2hc_2_desc 52,1785
+
+fftwr_src/frc_32.c,381
+static const fftw_real K195090322 33,1250
+static const fftw_real K980785280 34,1348
+static const fftw_real K555570233 35,1446
+static const fftw_real K831469612 36,1544
+static const fftw_real K382683432 37,1642
+static const fftw_real K923879532 38,1740
+static const fftw_real K707106781 39,1838
+void fftw_real2hc_32(48,2137
+fftw_codelet_desc fftw_real2hc_32_desc 466,13784
+
+fftwr_src/frc_3.c,162
+static const fftw_real K866025403 33,1240
+static const fftw_real K500000000 34,1338
+void fftw_real2hc_3(43,1634
+fftw_codelet_desc fftw_real2hc_3_desc 59,2156
+
+fftwr_src/frc_4.c,76
+void fftw_real2hc_4(41,1438
+fftw_codelet_desc fftw_real2hc_4_desc 62,2082
+
+fftwr_src/frc_5.c,248
+static const fftw_real K250000000 33,1243
+static const fftw_real K559016994 34,1341
+static const fftw_real K587785252 35,1439
+static const fftw_real K951056516 36,1537
+void fftw_real2hc_5(45,1833
+fftw_codelet_desc fftw_real2hc_5_desc 82,2926
+
+fftwr_src/frc_64.c,726
+static const fftw_real K471396736 33,1252
+static const fftw_real K881921264 34,1350
+static const fftw_real K290284677 35,1448
+static const fftw_real K956940335 36,1546
+static const fftw_real K555570233 37,1644
+static const fftw_real K831469612 38,1742
+static const fftw_real K995184726 39,1840
+static const fftw_real K098017140 40,1938
+static const fftw_real K773010453 41,2036
+static const fftw_real K634393284 42,2134
+static const fftw_real K980785280 43,2232
+static const fftw_real K195090322 44,2330
+static const fftw_real K382683432 45,2428
+static const fftw_real K923879532 46,2526
+static const fftw_real K707106781 47,2624
+void fftw_real2hc_64(56,2923
+fftw_codelet_desc fftw_real2hc_64_desc 1099,33343
+
+fftwr_src/frc_6.c,162
+static const fftw_real K500000000 33,1244
+static const fftw_real K866025403 34,1342
+void fftw_real2hc_6(43,1638
+fftw_codelet_desc fftw_real2hc_6_desc 85,2860
+
+fftwr_src/frc_7.c,334
+static const fftw_real K222520933 33,1246
+static const fftw_real K900968867 34,1344
+static const fftw_real K623489801 35,1442
+static const fftw_real K433883739 36,1540
+static const fftw_real K781831482 37,1638
+static const fftw_real K974927912 38,1736
+void fftw_real2hc_7(47,2032
+fftw_codelet_desc fftw_real2hc_7_desc 88,3550
+
+fftwr_src/frc_8.c,120
+static const fftw_real K707106781 33,1244
+void fftw_real2hc_8(42,1540
+fftw_codelet_desc fftw_real2hc_8_desc 104,3167
+
+fftwr_src/frc_9.c,679
+static const fftw_real K342020143 33,1246
+static const fftw_real K813797681 34,1344
+static const fftw_real K939692620 35,1442
+static const fftw_real K296198132 36,1540
+static const fftw_real K852868531 37,1638
+static const fftw_real K173648177 38,1736
+static const fftw_real K556670399 39,1834
+static const fftw_real K766044443 40,1932
+static const fftw_real K984807753 41,2030
+static const fftw_real K150383733 42,2128
+static const fftw_real K642787609 43,2226
+static const fftw_real K663413948 44,2324
+static const fftw_real K866025403 45,2422
+static const fftw_real K500000000 46,2520
+void fftw_real2hc_9(55,2816
+fftw_codelet_desc fftw_real2hc_9_desc 136,5378
+
+fftwr_src/rconfig.c,230
+#define NOTW_CODELET(NOTW_CODELET45,1721
+#define NOTWI_CODELET(NOTWI_CODELET47,1774
+#define TWIDDLE_CODELET(TWIDDLE_CODELET50,1829
+#define TWIDDLEI_CODELET(TWIDDLEI_CODELET52,1891
+fftw_codelet_desc *rfftw_config[118,4936
+
+fftwr_src/rexec2.c,194
+void rfftw_hc2c(32,1248
+void rfftw_c2hc(70,2261
+void rfftw_real2c_aux(111,3379
+void rfftw_c2real_aux(160,4570
+void rfftw_real2c_overlap_aux(204,5630
+void rfftw_c2real_overlap_aux(219,6047
+
+fftwr_src/rexec.c,290
+void rfftw_strided_copy(31,971
+static void rexecutor_many(53,1408
+static void rexecutor_many_vector(101,2572
+void rfftw_executor_simple(228,5789
+static void rexecutor_simple_inplace(373,9459
+static void rexecutor_many_inplace(411,10300
+void rfftw(471,11562
+void rfftw_one(525,13203
+
+fftwr_src/rfftwf77.c,291
+void F77_FUNC_(35,1171
+void F77_FUNC_(43,1395
+void F77_FUNC_(49,1506
+void F77_FUNC_(56,1724
+void F77_FUNC_(64,1898
+void F77_FUNC_(74,2275
+void F77_FUNC_(82,2522
+void F77_FUNC_(90,2782
+void F77_FUNC_(96,2901
+void F77_FUNC_(104,3187
+void F77_FUNC_(110,3368
+void F77_FUNC_(118,3654
+
+fftwr_src/rfftwnd.c,704
+fftwnd_plan rfftwnd_create_plan_specific(55,2156
+fftwnd_plan rfftw2d_create_plan_specific(139,4456
+fftwnd_plan rfftw3d_create_plan_specific(153,4766
+fftwnd_plan rfftwnd_create_plan(170,5137
+fftwnd_plan rfftw2d_create_plan(176,5308
+fftwnd_plan rfftw3d_create_plan(182,5470
+void rfftwnd_destroy_plan(190,5722
+void rfftwnd_fprint_plan(197,5882
+void rfftwnd_print_plan(202,5973
+void rfftwnd_real2c_aux(209,6140
+void rfftwnd_c2real_aux(251,7418
+void rfftwnd_real2c_aux_howmany(301,9027
+void rfftwnd_c2real_aux_howmany(354,10675
+void rfftwnd_real_to_complex(409,12409
+void rfftwnd_complex_to_real(485,14401
+void rfftwnd_one_real_to_complex(560,16388
+void rfftwnd_one_complex_to_real(566,16537
+
+fftwr_src/rgeneric.c,83
+void fftw_hc2hc_forward_generic(29,979
+void fftw_hc2hc_backward_generic(109,3076
+
+fftwr_src/rplanner.c,527
+fftw_plan_hook_ptr rfftw_plan_hook 40,1242
+static double rfftw_measure_runtime(43,1333
+static void rcompute_cost(93,2447
+static void run_plan_hooks(106,2790
+#define FOR_ALL_RCODELETS(FOR_ALL_RCODELETS115,2955
+static fftw_plan rplanner_wisdom(133,3612
+static fftw_plan rplanner_normal(220,5941
+static fftw_plan rplanner(367,10297
+fftw_plan rfftw_create_plan_specific(406,11286
+fftw_plan rfftw_create_plan(435,12010
+void rfftw_destroy_plan(458,12533
+void rfftw_fprint_plan(463,12617
+void rfftw_print_plan(468,12696
